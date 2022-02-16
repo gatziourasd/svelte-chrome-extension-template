@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Svelte Chrome Extension Template",
+  "description": "A simple Svelte Chrome Extension template using manifest v3",
+  "version": "0.0.1",
+  "icons": {
+    "16": "./assets/app/icon16.png",
+    "48": "./assets/app/icon48.png",
+    "128": "./assets/app/icon128.png"
+  },
+  "action": {
+    "default_title": "Svelte Chrome Extension",
+    "default_popup": "index.html"
+  },
+  "permissions": [],
+  "background": {
+    "service_worker": "./build/background/background-bundle.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["./build/foreground/foreground-bundle.js"],
+      "matches": ["https://example.org/*"]
+    }
+  ]
+}
